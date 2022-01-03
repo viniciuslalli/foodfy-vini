@@ -1,0 +1,79 @@
+
+
+{% extends "layout.njk" %}
+{% block content %}
+    <body>
+        <header>
+            <div class="container_first">
+                <div class="links">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="/assets/logo.png" alt=""></a>
+                        </div>
+                        <div class="link">
+                            <a href="/about">Sobre</a>
+                            <a class="recipes__href" href="/recipes">Receitas</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <div class="section">
+                    <div class="cards__recipe">
+                        <div class="card__recipe" id="{{ recipe.src }}">
+                            <img src="{{ recipe.src }}" alt="">
+                                <div class="card__recipe__text">
+                                    <h2>{{ recipe.title }}</h2>
+                                    <p>por {{ recipe.author }}</p>
+                                </div>
+                            </div>
+                            <div class="card__recipe__ingredients" id="description">
+                                <div class="header">
+                                    <h2>Ingredientes</h2>
+                                    <a class="hide_recipe" onclick="myFunction(1)">ESCONDER</a>
+                                </div>
+                                <div class="content_recipes info_ingredients" id="1">
+                                    <ul>
+                                        {% for ingredients in recipe.ingredients %}
+                                            <li>
+                                                {{ ingredients }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card__recipe__preparation" id="description">
+                                <div class="header">
+                                    <h2>Modo de preparo</h2>
+                                    <a class="hide_recipe" onclick="myFunction(2)">ESCONDER</a>
+                                </div>
+                                <div class="content_recipes info_prepare" id="2">
+                                    <ul>
+                                        {% for ingredients in recipe.ingredients %}
+                                            <li>
+                                                {{ ingredients }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card__recipe__information" id="description">
+                                <div class="header">
+                                    <h2>Informações adicionais</h2>
+                                    <a class="hide_recipe" onclick="myFunction(3)">ESCONDER</a>
+                                </div>
+                                <div class="content_recipes info_add" id="3">
+                                    <span>{{ recipe.information }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                <footer>
+                    <div class="container_fourth">
+                        <h2>Todos os direitos reservados, receitas Foodfy</h2>
+                    </div>
+                </footer>
+
+                <script src="/scripts.js"></script>
+{% endblock %}

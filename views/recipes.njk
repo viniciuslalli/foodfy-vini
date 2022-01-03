@@ -1,0 +1,68 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+
+    <body>
+        
+        <header>
+            <div class="container_first">
+                <div class="links">
+                    <div class="logo">
+                        <a href="/">
+                         <img src="/assets/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a  href="/about">Sobre</a>
+                        <a class="recipes__href" href="/recipes">Receitas</a>
+                    </div>
+                </div>
+                   
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class="section">
+               
+                <div class="cards">
+
+                    {% for item in items %}
+                        <div class="card" id="{{item.src}}">
+                            <a href="/recipes/{{item.id}}"><img src="{{item.src}}" alt=""></a>
+                            <h2>{{item.title}}</h2>
+                            <p>{{item.owner}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+        </div>
+        </div>
+
+
+        <div class="modal-overlay">
+            <div class="modal">                
+                <div class="modal-content">
+                    <!-- card here -->
+                    <img src="./assets/asinhas.png" alt="">
+                    <h2 class="modal__recipeName"></h2>
+                    <p class="modal__recipeAuthor"></p>
+                </div>
+
+                <div class="modal__close">
+                    <a class="close-modal">Fechar modal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <footer> -->
+            <div class="container_fourth">
+                <h2>Todos os direitos reservados, receitas Foodfy</h2>
+            </div>
+        <!-- </footer> -->
+       
+        
+
+
+    </body>
+
+{% endblock %}

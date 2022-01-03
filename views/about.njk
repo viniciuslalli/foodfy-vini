@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+
+    <body>
+        <header>
+            <div class="container_first">
+                <div class="links">
+                    <div class="logo">
+                        <a href="/">
+                         <img src="./assets/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a class="/" href="">Sobre</a>
+                        <a href="/recipes">Receitas</a>
+                    </div>
+                </div>
+                   
+            </div>
+        </header>
+
+        <div class="container_second">
+            <div class="section">
+
+                {% for abouts in about.titles %}
+                    <div class="{{abouts.class_title}}">
+                        <h1>{{abouts.title}}</h1>
+                    </div>
+                    <div class="{{abouts.class_description}}">
+                        <p>{{abouts.description}}</p>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>      
+
+        
+
+    </body>
+
+    <div class="container_fourth">
+            <h2>Todos os direitos reservados, receitas Foodfy</h2>
+    </div>
+    
+{% endblock %}
